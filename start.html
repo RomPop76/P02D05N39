@@ -7,13 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
+        :root {
+            --textSize: 80px;
+        }
+
         button {
             font-size: 40px;
         }
 
         h1 {
+            margin: 0;
             font-family: arial;
-            font-size: 80px;
+            font-size: var(--textSize);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: .3s;
+            border: 0px solid black;
+        }
+
+        button.larger:hover~h1 {
+            font-size: calc(var(--textSize)*2)
+        }
+
+        button.smaller:hover~h1 {
+            font-size: calc(var(--textSize)/2)
+        }
+
+        button.border:hover~h1 {
+            border: 10px solid black;
         }
     </style>
 </head>
